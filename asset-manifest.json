@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/react-github-contributes-finder/static/js/main.f9cc94dd.js",
+    "static/js/787.ac4e240b.chunk.js": "/react-github-contributes-finder/static/js/787.ac4e240b.chunk.js",
+    "index.html": "/react-github-contributes-finder/index.html",
+    "main.f9cc94dd.js.map": "/react-github-contributes-finder/static/js/main.f9cc94dd.js.map",
+    "787.ac4e240b.chunk.js.map": "/react-github-contributes-finder/static/js/787.ac4e240b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.f9cc94dd.js"
+  ]
+}
