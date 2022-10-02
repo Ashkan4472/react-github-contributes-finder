@@ -1,9 +1,11 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import repo from '../features/repo/slice';
+import collab from '../features/collab/slice';
 
 export const store = configureStore({
   reducer: {
-    repo
+    repo,
+    collab,
   },
 });
 
