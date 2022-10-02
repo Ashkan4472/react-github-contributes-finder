@@ -53,8 +53,10 @@ export const CustomTable = ({
           cursor: 'pointer',
         }}
       >
-        {heads.map((head) => (
-          <TableCell>{item[head.field]}</TableCell>
+        {heads.map((head, col) => (
+          <TableCell key={`table-item-${row}-${col}`}>
+            {item[head.field]}
+          </TableCell>
         ))}
       </TableRow>
     ))
@@ -66,8 +68,8 @@ export const CustomTable = ({
         <Table sx={{ minWidth: 320 }}>
           <TableHead>
             <TableRow>
-              {heads.map((head) => (
-                <TableCell>{head.title}</TableCell>
+              {heads.map((head, row) => (
+                <TableCell key={`table-head-${row}`}>{head.title}</TableCell>
               ))}
             </TableRow>
           </TableHead>
