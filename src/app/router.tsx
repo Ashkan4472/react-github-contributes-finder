@@ -3,4 +3,8 @@ import { Contributors } from '../pages/Contributors';
 import { Home } from '../pages/Home';
 
 export const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Home />,
+  },
 ]);
