@@ -22,8 +22,8 @@ export interface TablePropsI {
   total: number;
   page: number;
   isLoading?: boolean;
-  onRowClicked: (item: any) => void;
-  onPageChange: (pageNumber: number) => void;
+  onRowClicked?: (item: any) => void;
+  onPageChange?: (pageNumber: number) => void;
 }
 
 export const CustomTable = ({
@@ -48,7 +48,7 @@ export const CustomTable = ({
       <TableRow
         key={`table-item-${row}`}
         hover={true}
-        onClick={() => onRowClicked(item)}
+        onClick={() => (onRowClicked ? onRowClicked(item) : null)}
         sx={{
           cursor: 'pointer',
         }}
@@ -82,7 +82,9 @@ export const CustomTable = ({
         sx={{ margin: '0 auto' }}
         count={total}
         onPageChange={(_, newPageNumber) => {
-          onPageChange(newPageNumber);
+          if (onPageChange) {
+            onPageChange(newPageNumber);
+          }
         }}
         page={page}
         rowsPerPage={30}
