@@ -1,6 +1,16 @@
-# Getting Started with Create React App
+# Getting Started React Github Contributes Finder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template. Also used [Material UI](https://mui.com/) and [react-router](https://reactrouter.com/en/main)
+
+## How To Run Project
+
+To have a functional application you must have create and [Github App](https://docs.github.com/en/developers/apps/getting-started-with-apps/about-apps) and create and `TOKEN` and use it to be able to see collaborators. `TOKEN` must be placed in a `.env` or `.env.local` file. An example available on `.env.example`.
+
+## Known limitations
+
+- It was mentions that a user should be able to search a repository with conditions like `*react*` but after researching and reading github docs, github performs its own regex search based on [search query](https://docs.github.com/en/rest/search#constructing-a-search-query) that has made.
+- Without a TOKEN user is limited to do Repository search request 10 times in every minute but it is increased to 30 if TOKEN is given
+- Without a TOKEN user cannot check collaborators of the project. [Doc](https://docs.github.com/en/rest/search#search-repositories)
 
 ## Available Scripts
 
@@ -13,11 +23,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
@@ -39,8 +44,6 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+### `npm run deply`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+If you want to deploy app on a github pages you can run this script. this also runs `predeply` with builds app and with `gh-pages` push it to the branch that you run the script and deploys it
