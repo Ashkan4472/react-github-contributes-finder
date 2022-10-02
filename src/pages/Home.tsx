@@ -1,5 +1,6 @@
 import { Grid } from '@mui/material';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../app/hooks';
 import { CustomTable } from '../components/CustomTable';
 import { FullWidthSearch } from '../components/home/FullWidthSearch';
@@ -27,6 +28,8 @@ const heads = [
 
 export const Home = () => {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+
   const status = useAppSelector(selectRepoStatus);
   const total = useAppSelector(selectRepoTotalCount);
   const repos = useAppSelector(selectRepoItems);
@@ -44,6 +47,11 @@ export const Home = () => {
   const onPageChange = (newPage: number) => {
     setCurrentPage(newPage);
     dispatch(fetchRepos({ repoName, pageNumber: newPage + 1 }));
+  };
+
+  const navigateToContrib = (item: any) => {
+    const url = `/${item.owner}/${item.name}`;
+    navigate(url);
   };
 
   return (
@@ -73,7 +81,7 @@ export const Home = () => {
         total={total}
         isLoading={status === 'loading'}
         onPageChange={onPageChange}
-        onRowClicked={() => {}}
+        onRowClicked={navigateToContrib}
       />
     </Grid>
   );
